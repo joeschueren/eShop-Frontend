@@ -1,19 +1,21 @@
 import React from "react";
 
+// checks whether or not th user signed in to render buttons or a welcome
 let auth = false;
 let session = JSON.parse(sessionStorage.getItem("username"));
-let user = "";
 
-console.log(session);
+
 if(session !== null){
-  user = session;
   auth = true;
 }
 
+// signs the user out
 function handleSignout (){
   sessionStorage.setItem("username", null);
 }
 
+// Renders the bootstrap navbar along with conditionally render a cart item counter
+// and whether the user is signed in
 function Header(props){
     let user = JSON.parse(sessionStorage.getItem("username"));
     return <section id="header" className="nav-header">

@@ -6,9 +6,11 @@ import Itemrow from "./Itemrow";
 
 function Home(props)
 {
+    // Grabs the page number being rendered
     const { number } = useParams();
     const navigate = useNavigate()
     const location = useLocation()
+    // Logic to decide where the page starts rendering items based on page number
     let startAt = 0;
     if(location.pathname !== "/"){
         startAt = 5 + ( 9 * (parseInt(number)-1));
@@ -16,10 +18,12 @@ function Home(props)
     else{
         startAt = 5
     }
+    // Sends to home page if the use tries to go to a page tat doesn't exist
     if(startAt >= 19){
         navigate("/");
     }
 
+    // Logic to highlight which page the user is on at the bottom
     let pageOne = "page-handler";
     let pageTwo = "page-handler";
     if(parseInt(number) !== 2){
@@ -30,7 +34,8 @@ function Home(props)
     }
 
 
-
+    // Renders a whole page depending on which page, which includes the carousel, the featured items,
+    // and all of the items being rendered dynamically based off of page
     return(
     <div>
     <section id="item-carousel" className="section">

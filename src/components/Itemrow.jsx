@@ -2,8 +2,10 @@ import React from "react";
 import Itembox from "./Itembox";
 
 function Itemrow(props){
+    // sets empty array incase there are no items to be rendered
     let itemsArray = [];
 
+    // pushes all the items in the row using item box components to be rendered
     for(let i = 0; i<props.products.length; i++)
     {
         if(props.products[i].length !== 0)
@@ -20,6 +22,7 @@ function Itemrow(props){
         }
     }
 
+    // Renders the array of items
     return(
     <div className="container-fluid">
         <div className="row">

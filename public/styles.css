@@ -26,6 +26,14 @@ body {
     transform: translate(-50%, -50%);
     width: 50%;
     height: 50%;
+    animation-name: flashing;
+    animation-duration: .5;
+    animation-iteration-count: infinite;
+}
+
+@keyframes flashing{
+    50%{color: var(--tertiary-color)}
+    100%{color: var(--secondary-color)}
 }
 
 /* Section Styling */

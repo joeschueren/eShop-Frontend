@@ -1,6 +1,7 @@
 import React from "react";
 import AccountForm from "./AccountForm";
 
+// renders the register page at the register route passing in info to account form
 function Register(){
     return (
     <div>

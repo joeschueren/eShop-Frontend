@@ -5,22 +5,26 @@ import {useNavigate} from "react-router-dom";
 
 function AccountForm(props){
 
+    // Set up navigate to use to send back to home route, along with keeping track of
+    // email password, and the response to the information input
     const navigate= useNavigate();
     const [emailValue, setEmailValue] = useState("");
     const [passwordValue, setPasswordValue] = useState("");
     const [output, setOutput] = useState("");
 
 
+    // Function call to send a post to the backend to check if user and pass are either available or 
+    // matching with variable route on post request then responds to information sent back from post
+    // on whether or not to authorize
     function handleClick(event){
         event.preventDefault();
         if(emailValue.length < 8){
-            setOutput("username must be 8 characters or longer");
+            setOutput("Username must be 8 characters or longer");
         }
         else if(passwordValue.length < 8){
-            setOutput("password must be 8 characters or longer");
+            setOutput("Password must be 8 characters or longer");
         }
-            setOutput("clicked");
-            fetch('http://localhost:5000/'+props.postRoute, {
+            fetch('https://localhost:5000/'+props.postRoute, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,11 +36,8 @@ function AccountForm(props){
                 })
                 .then(response => {return response.json()})
                 .then(function(data){
-                console.log(data);
                 let auth = data[0];
-                console.log(auth);
                 if(auth){
-                    console.log("setting into session storage")
                     sessionStorage.setItem("username", JSON.stringify(emailValue));
                     navigate("/");
                     window.location.reload();
@@ -46,17 +47,17 @@ function AccountForm(props){
                 }})
     }
 
+    // Set up to make both inputs controlled components and track their values
     function handleChange(e){
         if(e.target.name === "user"){
             setEmailValue(e.target.value);
-            console.log(emailValue);
         }
         if(e.target.name === "pass"){
             setPasswordValue(e.target.value);
-            console.log(passwordValue);
         }
     }
 
+    // Render the Account Form based on whether it is a log in or register
     return(<div className="container-fluid">
     <div className="row">
         <div className="col-lg-12 form-div">

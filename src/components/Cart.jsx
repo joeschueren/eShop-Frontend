@@ -1,25 +1,23 @@
 import React from "react";
-import {useNavigate} from "react-router-dom";
 import CartItem from "./CartItem";
 
 
 
 function Cart(props){
-
-    const navigate = useNavigate()
-    console.log(JSON.parse(localStorage.getItem("cart")));
+    // gets the user's cart
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
-
+    // creates an array to render all the items from cart
     const componentsArray = [];
 
+    //handles the clear cart button
     function handleClick(){
         props.clearCart();
-        console.log(localStorage.getItem("cart"));
         window.location.reload();
 
     }
 
+    // checks to see if cart is empty then pushes all the items into the array to be rendered
     if(cart !== null)
     {
         for(let i=0; i<cart.length; i++){
@@ -34,6 +32,8 @@ function Cart(props){
         }
     }
 
+    // renders all the cart items, or if the cart is empty a message to the user along
+    //  with a button to empty cart
     return(
         <div>
             <h1 className="cart-title">Your Cart</h1>
