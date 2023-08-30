@@ -20,7 +20,7 @@ function App()
 
     // Makes a get request to the backend to get items to display
     useEffect(function(){
-        fetch("http://192.168.0.238:5000/inventory")
+        fetch("https://eshopapi-1iz1.onrender.com/inventory")
         .then((response) => response.json())
         .then((data) => {setData(data);
         sessionStorage.setItem("products", JSON.stringify(data));})

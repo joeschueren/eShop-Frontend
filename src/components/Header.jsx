@@ -21,7 +21,7 @@ function Header(props){
     return <section id="header" className="nav-header">
     <nav className="navbar navbar-expand-lg bg-body-tertiary">
   <div className="container-fluid nav-container">
-    <a className="navbar-brand logo" href="/">Cart</a>
+    <a className="navbar-brand logo" href="/">eShop</a>
     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon"></span>
     </button>
