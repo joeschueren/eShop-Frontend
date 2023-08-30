@@ -31,7 +31,7 @@ function Itembox(props)
         navigate("/view");
     }
     // renders on single item box with given info from props
-    return <div className="col col-lg-4 col-md-6 col-sm-12 item-container">
+    return <div className="col col-lg-4 col-md-12 col-sm-12 item-container">
         <div onClick={handleClick} className="anchor-box">
             <div className="itembox">
                 <div className="img-container">

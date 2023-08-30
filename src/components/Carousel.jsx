@@ -37,10 +37,10 @@ function Carousel(props)
         <div name="0" className="carousel-item active">
             <div name="0" className="container-fluid">
                 <div name="0" onClick={handleClick} className="row carousel-row">
-                    <div name="0" className="col-sm-6 carousel-picture">
+                    <div name="0" className="col-md-6 carousel-picture">
                         <img name="0" src={props.products[0].image} className="d-block w-100 carousel-img hover-img" alt=""></img>
                     </div>
-                        <div name="0" className="col-sm-6 carousel-desc">
+                        <div name="0" className="col-md-6 carousel-desc">
                             <h2 name="0">{props.products[0].title}</h2>
                             <div name="0" className="price-break-100"></div>
                             <p name="0">{category0}</p>
@@ -54,10 +54,10 @@ function Carousel(props)
         <div name="1"  className="carousel-item">
             <div name="1" className="container-fluid">
                 <div name="1" onClick={handleClick} className="row">
-                    <div name="1"className="col-sm-6 carousel-picture">
+                    <div name="1"className="col-md-6 carousel-picture">
                         <img name="1" src={props.products[1].image} className="d-block w-100 carousel-img hover-img" alt=""></img>
                     </div>
-                        <div name="1"className="col-sm-6 carousel-desc">
+                        <div name="1"className="col-md-6 carousel-desc">
                             <h2 name="1">{props.products[1].title}</h2>
                             <div name="1" className="price-break-100"></div>
                             <p name="1">{category1}</p>
@@ -70,10 +70,10 @@ function Carousel(props)
         <div name="2" className="carousel-item">
             <div name="2" className="container-fluid">
                 <div name="2" onClick={handleClick} className="row">
-                    <div name="2" className="col-sm-6 carousel-picture">
+                    <div name="2" className="col-md-6 carousel-picture">
                         <img name="2" src={props.products[2].image} className="d-block w-100 carousel-img hover-img" alt=""></img>
                     </div>
-                        <div name="2" className="col-sm-6 carousel-desc">
+                        <div name="2" className="col-md-6 carousel-desc">
                             <h2 name="2">{props.products[2].title}</h2>
                             <div name="2" className="price-break-100"></div>
                             <p name="2">{category2}</p>

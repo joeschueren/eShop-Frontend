@@ -219,10 +219,9 @@ body {
     color: #7c827d;
 }
 
-@media(max-width: 600px)
+@media(max-width: 1250px)
 {
    .carousel-picture{
-        width: 85%;
         margin: auto;
    }
    

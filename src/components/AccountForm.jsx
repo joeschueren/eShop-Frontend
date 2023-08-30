@@ -24,7 +24,7 @@ function AccountForm(props){
         else if(passwordValue.length < 8){
             setOutput("Password must be 8 characters or longer");
         }
-            fetch('https://localhost:5000/'+props.postRoute, {
+            fetch('https://eshopapi-1iz1.onrender.com/'+props.postRoute, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

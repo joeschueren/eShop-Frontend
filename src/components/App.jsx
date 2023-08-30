@@ -18,13 +18,15 @@ function App()
         localStorage.setItem("cart", JSON.stringify([]))
     }
 
-    // Makes a get request to fakestore api to get items to display
+    // Makes a get request to the backend to get items to display
     useEffect(function(){
-        fetch("https://fakestoreapi.com/products")
+        fetch("http://192.168.0.238:5000/inventory")
         .then((response) => response.json())
-        .then((data) => setData(data))
+        .then((data) => {setData(data);
+        sessionStorage.setItem("products", JSON.stringify(data));})
         .catch((error) => console.error(error));
     }, []);
+    
 
     // Gets either the current cart or sets to an empty array to fill in the new item being added
     let cartInfo = JSON.parse(localStorage.getItem("cart")) || [];
