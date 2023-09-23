@@ -18,22 +18,14 @@ body {
 }
 /* Loading Screen */
 
-.loading{
-    margin-top: 10%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 50%;
-    height: 50%;
-    animation-name: flashing;
-    animation-duration: .5;
-    animation-iteration-count: infinite;
-}
 
-@keyframes flashing{
-    50%{color: var(--tertiary-color)}
-    100%{color: var(--secondary-color)}
+
+
+.loading-div{
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Section Styling */
@@ -507,6 +499,7 @@ input{
 /* Cart Styling */
 
 .cart-box{
+    width: 90%;
     color: black;
     border: 2px solid;
     border-color: var(--main-color);
@@ -543,7 +536,7 @@ input{
 }
 
 .cart-button:hover, .clear-cart-button:hover{
-    background-color:var(--main-color);
+    opacity: 50%;
 }
 
 .cart-button-container{
@@ -554,7 +547,7 @@ input{
 
 .empty-text{
     text-align: center;
-    margin: 20px 0px;
+    margin: 40px 0px;
 }
 
 .price-break, .price-break-100{
@@ -579,15 +572,39 @@ input{
 }
 
 .price-details{
+    width: 90%;
+    position: sticky;
+    top: 10%;
     font-weight: 700;
     color: grey;
     border: 2px solid;
     border-color: #d6d6d6;
     background-color: white;
-    padding-left: 10px;
-    padding-right: 10px;
+    padding:25px 10px;
+}
+
+@media(max-width: 992px){
+    .price-details{
+        position: block;
+        width: 80%;
+        margin: auto;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .price-row{
+        margin: auto;
+    }
+
+    .row-whole{
+        margin: 0px;
+        padding: 0px;
+    }
+}
+
+.row-whole{
+    width: 100%;
     padding-bottom: 25px;
-    padding-top: 25px;
 }
 
 .price-heading{
@@ -595,6 +612,25 @@ input{
     color: black;
     font-size: 24px;
     padding: 5%;
+}
+
+.empty-div{
+    text-align: center;
+}
+
+.empty-anchor{
+    font-size: 18px;
+    background-color: #0B2447;
+    padding: 7px 12px;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+}
+
+.empty-anchor:hover{
+    background-color: white;
+    color:#0B2447;
 }
 
 .price-row{
@@ -608,6 +644,11 @@ input{
 .purchase-button{
     background-color: #23ba2b;
     margin: 20px auto 0px auto;
+}
+
+.purchase-button:hover{
+    background-color: #23ba2b;
+    opacity: 50%;
 }
 .item-row{
     margin: 30px 0px;

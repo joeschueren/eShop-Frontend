@@ -59,7 +59,7 @@ function App()
             <Header info={cartInfo}>
             </Header>
             {/* Dynamically renders the page if the get request has finished or a loading screen*/}
-            {typeof data === "undefined" ? <h1 className="loading"> Loading...</h1> :
+            {typeof data === "undefined" ? <div className="loading-div"><h1 className="loading"> Loading...</h1></div> :
             <Routes>
                 <Route path="/register" element={<Register/>}/>
                 <Route path="/login" element={<Login/>}/>
