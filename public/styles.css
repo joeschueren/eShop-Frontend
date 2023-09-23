@@ -572,6 +572,7 @@ input{
 }
 
 .price-details{
+    text-align: center;
     width: 90%;
     position: sticky;
     top: 10%;
