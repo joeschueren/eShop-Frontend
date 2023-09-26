@@ -7,6 +7,14 @@ function Cart(props){
     // gets the user's cart
     let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
+    let checkoutInfo = {items: []};
+
+    for(let i = 0; i < cart.length; i++){
+        checkoutInfo.items.push({id: cart[i].id, quantity: 1})
+    }
+
+    console.log(checkoutInfo)
+
     let price = 0;
 
     // creates an array to render all the items from cart
@@ -24,8 +32,18 @@ function Cart(props){
 
     // warns the user when they try to purchase that they are unable, then reset after 5 seconds
     function handleWarning(){
-        setWarning("Unable to purchase item, this site is for demonstration purposes only.");
-        setTimeout(() => setWarning(""), 5000)
+        fetch("https://eshopapi-1iz1.onrender.com/checkout", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(checkoutInfo)
+        }).then(res => {
+            if(res.ok) return res.json()
+            return res.json().then(json => Promise.reject(json))
+        }).then(({ url }) => {
+            window.location = url;
+        })
     }
 
     // checks to see if cart is empty then pushes all the items into the array to be rendered
@@ -48,7 +66,7 @@ function Cart(props){
     //  with a button to empty cart
     return(
         <div>
-            <div classNAme="container-fluid">
+            <div className="container-fluid">
             <h1 className="cart-title">Your Cart</h1>
             <div className="row row-whole">
                 <div className="col-lg-8">

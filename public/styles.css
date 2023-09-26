@@ -332,7 +332,7 @@ body {
 
 .cart-title{
     margin-left: 10%;
-    margin-top: 10%;
+    margin-top: 5%;
     font-family: var(--main-font);
     color: var(--main-color);
 }
