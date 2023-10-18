@@ -696,3 +696,11 @@ input{
     margin: auto;
     text-align: center;
 }
+
+/* resolution handler */
+
+.container-all{
+    max-width: 1920px;
+    background-color: white;
+    margin: 0 auto;
+}
